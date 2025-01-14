@@ -20,7 +20,7 @@ if [[ "$VIRTUAL_ENV" == *"$envFolder" ]]; then
     # if chattts is not installed, install it
     if ! pythonExec -m pip show chattts-fork > /dev/null; then
         echo "Installing chattts..."
-        pythonExec -m pip install numpy==1.24
+        pythonExec -m pip install numpy==1.24 torch==2.1.2
         pythonExec -m pip install -U chattts-fork
 
         echo "now try it:"
