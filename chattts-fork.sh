@@ -1,10 +1,11 @@
 #!/bin/sh
 
+# repo: https://github.com/Samge0/ChatTTS-fork
 # repo: https://github.com/2noise/ChatTTS
 
 set -e
 
-envFolder=chatttsEnv
+envFolder=chatttsForkEnv
 
 alias pythonExec=python3.10
 
