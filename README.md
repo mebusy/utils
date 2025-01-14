@@ -12,6 +12,6 @@ whisper.sh | Extract audio and video with timeline subtitles | https://github.co
 
 chattts seed 排行榜: https://huggingface.co/spaces/taa/ChatTTS_Speaker
 
-1448 ?
+1092 / 1902 ?
 
 
