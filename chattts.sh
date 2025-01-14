@@ -4,7 +4,7 @@
 
 set -e
 
-envFolder=chattts
+envFolder=chatttsEnv
 
 alias pythonExec=python3.10
 
@@ -18,11 +18,11 @@ fi
 # if $VIRTUAL_ENV  has suffix  $envFolder
 if [[ "$VIRTUAL_ENV" == *"$envFolder" ]]; then
     # if chattts is not installed, install it
-    if ! pythonExec -m pip show ChatTTS > /dev/null; then
+    if ! pythonExec -m pip show chattts-fork > /dev/null; then
         echo "Installing chattts..."
         # torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 
         pythonExec -m pip install numpy==1.24 torch==2.1.2
-        pythonExec -m pip install -U ChatTTS
+        pythonExec -m pip install -U chattts-fork
 
         echo "now try it:"
         echo '$' "chattts '你好,你好' --seed=1448 -o 123.mp3"
