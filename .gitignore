@@ -172,7 +172,7 @@ cython_debug/
 
 .DS_Store
 *.swp
-chattts/
+chattts*/
 *.mp3
 whisper.cpp/
 
