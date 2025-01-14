@@ -25,7 +25,7 @@ if [[ "$VIRTUAL_ENV" == *"$envFolder" ]]; then
         pythonExec -m pip install -U ChatTTS
 
         echo "now try it:"
-        echo '$' "chattts '你好,你好' --seed=1234 -o 123.mp3"
+        echo '$' "chattts '你好,你好' --seed=1448 -o 123.mp3"
     fi
 else
     # env is not activated, activate it
