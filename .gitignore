@@ -175,4 +175,4 @@ cython_debug/
 chattts*/
 *.mp3
 whisper.cpp/
-
+asset/
