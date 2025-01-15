@@ -71,6 +71,7 @@ def main(
     stream: bool = False,
     source: str = "local",
     custom_path: str = "",
+    aseed: int = 0,
 ):
     logger.info("Text input: %s", str(texts))
 
@@ -93,9 +94,13 @@ def main(
         sys.exit(1)
 
     if spk is None:
+        global audio_seed
+        if aseed:
+            audio_seed = aseed
+            print(f"set audio_seed: {audio_seed}")
         torch.manual_seed(audio_seed)
         spk = chat.sample_random_speaker()
-    logger.info("Use speaker:")
+    logger.info(f"Use speaker(aseed:{audio_seed}):")
     print(spk)
 
     torch.manual_seed(text_seed)
@@ -132,7 +137,7 @@ if __name__ == "__main__":
     logger.info("Starting ChatTTS commandline demo...")
     parser = argparse.ArgumentParser(
         description="ChatTTS Command",
-        usage='[--spk xxx] [--stream] [--source ***] [--custom_path XXX] "Your text 1." " Your text 2."',
+        usage='[--spk xxx] [--aseed xxx] [--stream] [--source ***] [--custom_path XXX] "Your text 1." " Your text 2."',
     )
     parser.add_argument(
         "--spk",
@@ -163,7 +168,13 @@ if __name__ == "__main__":
         default=["YOUR TEXT HERE"],
         nargs=argparse.REMAINDER,
     )
+    parser.add_argument(
+        "--aseed",
+        help="audio seed",
+        type=int,
+        default=0,
+    )
     args = parser.parse_args()
     logger.info(args)
-    main(args.texts, args.spk, args.stream, args.source, args.custom_path)
+    main(args.texts, args.spk, args.stream, args.source, args.custom_path, args.aseed)
     logger.info("ChatTTS process finished.")

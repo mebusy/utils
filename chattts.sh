@@ -30,7 +30,7 @@ if [[ "$VIRTUAL_ENV" == *"$envFolder" ]]; then
     echo "now try it:"
     echo '$' cd $envFolder/repo
     # echo '$' "python examples/cmd/run.py  '你好,你好'"
-    echo '$' "python runChattts.py  '你好,你好'"
+    echo '$' "python runChattts.py --aseed 1902 '你好,你好'"
 else
     # env is not activated, activate it
     echo "run following command to activate the environment:"
