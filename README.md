@@ -12,6 +12,13 @@ whisper.sh | Extract audio and video with timeline subtitles | https://github.co
 
 chattts seed 排行榜: https://huggingface.co/spaces/taa/ChatTTS_Speaker
 
-1092 / 1902 ?
+
+audio seed | gender | desc
+--- | --- | ---
+2157 | F | 中性声音
+2418 | M | 一点点京腔
+1902 | M | 沉稳
+902 | M | 有换气声
+1703 | F | 语速快
 
 
